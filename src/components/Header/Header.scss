@@ -1,144 +1,53 @@
 
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  @keyframes slideInRight {
-    from {
-      transform: translateX(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-3px);
-    }
-  }
-  
+}
 
-  .animated-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: all 0.3s ease;
-    
-    &.scrolled {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      
-      .logo {
-        transform: scale(0.9);
-      }
-    }
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); 
   }
-  
- 
-  .animated-fade-in {
-    animation: fadeIn 0.6s ease-in-out;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  
-  .animated-slide-in {
-    animation: slideInRight 0.5s ease-in-out;
-    animation-fill-mode: both;
-  }
-  
+}
 
-  .animated-logo {
-    transition: transform 0.4s ease;
-    
-    img {
-      &:hover {
-        animation: pulse 1.5s infinite;
-      }
-    }
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px); 
   }
-  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-  .search-input {
-    transition: all 0.3s ease;
-    width: 180px;
-    
-    &:focus {
-      width: 220px;
-      border-color: #669933;
-      outline: none;
-    }
-  }
-  
-  .search-button {
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background-color: #558822 !important;
-      transform: scale(1.05);
-    }
-  }
-  
- 
-  .nav-item {
-    position: relative;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: #669933;
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-    
-    &:hover::after {
-      width: 70%;
-    }
-  }
-  
 
-  .cart-item {
-    .cart-icon {
-      transition: all 0.3s ease;
-    }
-    
-    &:hover .cart-icon {
-      animation: bounce 0.8s infinite;
-    }
-  }
-  
 
-  @media (max-width: 768px) {
-    .search-input:focus {
-      width: 180px;
-    }
+.animated-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0; }
+
+.animated-slide-in {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0; 
+}
+
+.animated-logo {
+  transition: transform 0.3s ease; 
+
+  &:hover {
+    transform: scale(1.05);
   }
-  
+}
+

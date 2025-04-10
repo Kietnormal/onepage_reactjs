@@ -1,44 +1,62 @@
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+import './slide.scss'; 
+
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+const slideData = [
+  {
+    id: 1,
+    imageUrl: "https://hoaqua.langsonweb.com/wp-content/uploads/2020/09/banner-traicay.jpg",
+    altText: "Banner quảng cáo trái cây tươi ngon",
+  },
+  {
+    id: 2,
+    imageUrl: "https://hoaqua.langsonweb.com/wp-content/uploads/2020/09/banner-traicay.jpg",
+    altText: "Ưu đãi đặc biệt mùa hè",
+  },
+  {
+    id: 3,
+    imageUrl: "https://hoaqua.langsonweb.com/wp-content/uploads/2020/09/banner-traicay.jpg",
+    altText: "Dịch vụ giao hàng trái cây tận nơi",
+  },
+];
 
 const MySlider = () => {
   return (
-    <div className="w-full h-[400px]">
+    <div className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] mb-6 md:mb-8">
       <Swiper
-        modules={[Autoplay, Pagination]}
-        spaceBetween={30}
+        modules={[Autoplay, Pagination, Navigation]}
+        spaceBetween={0}
         slidesPerView={1}
-        autoplay={{ delay: 3000 }}
         loop={true}
-        pagination={{ clickable: true }}
-        className="w-full h-full"
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+        }}
+        navigation={true}
+        className="mySwiper w-full h-full" 
       >
-        <SwiperSlide>
-          <img
-            src="https://hoaqua.langsonweb.com/wp-content/uploads/2020/09/banner-traicay.jpg"
-            alt="Slide 1"
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-             src="https://hoaqua.langsonweb.com/wp-content/uploads/2020/09/banner-traicay.jpg"
-           
-            alt="Slide 2"
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-             src="https://hoaqua.langsonweb.com/wp-content/uploads/2020/09/banner-traicay.jpg"
-            alt="Slide 3"
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
+        {slideData.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <img
+              src={slide.imageUrl}
+              alt={slide.altText}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

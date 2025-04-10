@@ -1,0 +1,23 @@
+
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+  --swiper-navigation-size: 30px;
+}
+
+.mySwiper .swiper-button-prev:hover,
+.mySwiper .swiper-button-next:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.mySwiper .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  background-color: #669933;
+}
