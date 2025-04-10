@@ -1,7 +1,7 @@
-"use client"
+
 import React from 'react'
 import { useEffect, useState } from "react"
-import "./productlist.scss"
+import "./productList.scss"
 
 const products = [
   {
